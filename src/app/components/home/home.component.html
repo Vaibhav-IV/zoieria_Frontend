@@ -1,0 +1,307 @@
+<app-carousel></app-carousel>
+
+<div class="main-content">
+
+  <div class="row">
+    <div class="col-lg-3 col-md-3 col-sm-4" *ngFor="let product of publishedProducts; let i = index">
+      <div>
+        <ng-container *ngIf="product.published === true">
+          <mat-card class="card-wrapper">
+
+            <img [class.active]='i == currentIndex' routerLink="/home/{{product.id}}"
+              (click)="setActiveProduct(product,i)" class="card-image" mat-card-image
+              src="./../../../assets/img/butterflyRing.jpg" alt="Product Photo">
+
+            <div class="sale-tag pl-2 pt-1">
+              SALE
+            </div>
+
+            <mat-card-content style="background: transparent !important;" class="description">
+              <p [class.active]='i == currentIndex' routerLink="/home/{{product.id}}"
+                (click)="setActiveProduct(product,i)" class="prd-text"> {{product.cost}}
+              </p>
+
+              <h3 class="prd-text" style="text-align:left;float:left;">{{product.title}}</h3>
+              <!-- <s style="text-align:right;float:right; margin-top: 4px;"> {{product.cost}}</s> -->
+
+              <div class="cart-btn"><button mat-button style="background-color: #c68e5b;">Add ❤</button></div>
+            </mat-card-content>
+
+          </mat-card>
+
+        </ng-container>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+
+
+<div class="main-content">
+  <!-- ============================================-->
+  <!-- <section> begin ===================== style="margin-top: -23rem !important;"=======-->
+  <section class="py-0">
+    <h1 align="center" class="ex-text">Shop for Youe Dear once</h1>
+    <div class="row g-0">
+      <div class="col-md-6 col-sm-12 pr-1">
+        <div class="card card-span"> <img height="552px" src="assets/img/her.png" alt="..." />
+          <div style="height:80px;" class="card-img-overlay d-flex flex-center"> <a
+              style="background:  rgba(0, 255, 0, 0.3);" class="btn btn-lg btn-light" href="#!">For Her</a></div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-sm-12">
+        <div class="card card-span"> <img height="552px" src="assets/img/him.png" alt="..." />
+          <div style="height:80px;" class="card-img-overlay d-flex flex-center"> <a
+              style="background:  rgba(0, 255, 0, 0.3);" class="btn btn-lg btn-light" href="#!">For Him </a></div>
+        </div>
+      </div>
+    </div>
+    <!-- end of .container-->
+  </section><!-- <section> close ============================-->
+  <!-- ============================================-->
+
+
+  <!-- ============================================-->
+  <!-- <section> begin ============================-->
+  <section class="">
+    <div class="">
+
+      <h1 align="center" class="ex-text">Be Excluise</h1>
+
+      <div class="row g-2">
+
+        <div class="col-md-6">
+          <div class="p-4 d-flex flex-column justify-content-center text-bg">
+            <h4>Exclusive collection 2021</h4>
+            <h1 class="fw-semi-bold lh-sm fs-4 fs-lg-5 fs-xl-6">Be exclusive</h1>
+            <p>The best everyday option in a Super Saver range within a reasonable price. It is our
+              responsibility to keep you 100 percent stylish. Be smart &amp; , trendy with us.</p>
+            <div class="d-grid gap-2 d-md-block"><a class="btn btn-lg btn-dark" href="#" role="button">Explore</a></div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="card"><img height="552px" src="assets/img/necklace.jpg" alt="..." />
+            <div class="card-img-overlay bg-dark-gradient">
+              <div class="d-flex align-items-end justify-content-center"><a class="btn btn-lg text-light fs-1" href="#!"
+                  role="button">Outfit<svg class="bi bi-arrow-right-short" width="23" height="23" fill="currentColor"
+                    viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                      d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z">
+                    </path>
+                  </svg></a></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div><!-- end of .container-->
+  </section><!-- <section> close ============================-->
+  <!-- ============================================-->
+
+
+
+  <section>
+    <div class="main-content">
+      <div class="row">
+        <div class="col-lg-3 col-md-3 col-sm-4" *ngFor="let index of [0,1,2,3]">
+          <mat-card class="card-wrapper">
+            <img class="card-image" mat-card-image src="./../../../assets/img/butterflyRing.jpg" alt="Product Photo">
+          </mat-card>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================-->
+  <!-- <section> begin ============================-->
+  <section class="">
+    <div class="">
+      <h1 align="center" class="ex-text">Shop by category</h1>
+      <div class="row">
+
+        <div style="margin-right: -1rem;" class="col-md-6 col-sm-12">
+          <div class="card "><img class="card-img" height="552px" src="assets/img/rings.jpg" alt="..." />
+            <div class="card-img-overlay bg-dark-gradient rounded-0">
+              <div class="p-5 p-md-2 p-xl-5 d-flex flex-column flex-end-center align-items-baseline">
+                <h1 class="fs-md-4 fs-lg-7 text-light">Rings of '21 </h1>
+              </div>
+            </div><a class="stretched-link" href="#!"></a>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-sm-12">
+          <div class="row g-0">
+            <div class="col-md-6 col-sm-6">
+              <div class="card card-span text-white"><img class="card-img" height="274px" src="assets/img/necklase2.jpg"
+                  alt="..." />
+                <div class="card-img-overlay bg-dark-gradient rounded-0">
+                  <div class="p-5 p-xl-5 p-md-0">
+                    <h3 class="text-light">Necklaces</h3>
+                  </div>
+                </div><a class="stretched-link" href="#!"></a>
+              </div>
+            </div>
+            <div class="col-md-6 col-sm-6">
+              <div class="card card-span text-white"><img class="card-img" height="274px"
+                  src="assets/img/necklase3.jpeg" alt="..." />
+                <div class="card-img-overlay bg-dark-gradient rounded-0">
+                  <div class="p-5 p-xl-5 p-md-0">
+                    <h3 class="text-light">Rings</h3>
+                  </div>
+                </div><a class="stretched-link" href="#!"></a>
+              </div>
+            </div>
+            <div class="col-md-6 col-sm-6">
+              <div class="card card-span text-white"><img class="card-img" height="274px" src="assets/img/earpiece.jpg"
+                  alt="..." />
+                <div class="card-img-overlay bg-dark-gradient rounded-0">
+                  <div class="p-5 p-xl-5 p-md-0">
+                    <h3 class="text-light">Earpieces</h3>
+                  </div>
+                </div><a class="stretched-link" href="#!"></a>
+              </div>
+            </div>
+            <div class="col-md-6 col-sm-6">
+              <div class="card card-span text-white"><img class="card-img" height="274px" src="assets/img/earrings.png"
+                  alt="..." />
+                <div class="card-img-overlay bg-dark-gradient rounded-0">
+                  <div class="p-5 p-xl-5 p-md-0">
+                    <h3 class="text-light">Watches</h3>
+                  </div>
+                </div><a class="stretched-link" href="#!"> </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div><!-- end of .container-->
+  </section><!-- <section> close ============================-->
+  <!-- ============================================-->
+
+
+  <!-- ============================================-->
+  <!-- <section> begin ============================-->
+  <section>
+    <div>
+      <h1 align="center" class="ex-text">Shop by category</h1>
+      <div class="row">
+        <div style="margin-right: -1rem;" class="col-md-6">
+          <div class="card"><img height="552px" src="assets/img/modernJwel.jpeg" alt="..." />
+            <div class="card-img-overlay bg-dark-gradient">
+              <div class="p-5 p-md-2 p-xl-5">
+                <h1 class="fs-md-4 fs-lg-7 text-light">Modern Stories </h1>
+                <h5 class="fs-2 text-light">collection</h5>
+              </div>
+            </div><a class="stretched-link" href="#!"></a>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card"><img height="552px" src="assets/img/traditionalJwel.jpg" alt="..." />
+            <div class="card-img-overlay bg-dark-gradient">
+              <div class="p-5 p-md-2 p-xl-5 d-flex flex-column flex-end-center align-items-baseline">
+                <h1 class="fs-md-4 fs-lg-7 text-light">Traditional Stories </h1>
+                <h5 class="fs-2 text-light">collection</h5>
+              </div>
+            </div><a class="stretched-link" href="#!"></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+
+<div class="main-content image-slider">
+  <section>
+    <h1 align="center" class="ex-text">Wedding Collection</h1>
+
+
+    <div class="options">
+      <div class="option active" appImageSlider style="background-image: url('../../../assets/img/earpiece.jpg');">
+        <div class="shadow"></div>     
+        <div class="lable">
+          <div class="icon">
+            <mat-icon>favorite_border</mat-icon>
+          </div>
+          <div class="info">
+            <div class="main">uhsiuhiujar</div>
+            <div class="sub">joaijvojmawirovj</div>
+          </div>
+        </div> 
+      </div>
+
+      <div class="option" appImageSlider style="background-image: url('../../../assets/img/earpiece.jpg');">
+        <div class="shadow"></div>     
+        <div class="lable">
+          <div class="icon">
+            <mat-icon>favorite_border</mat-icon>
+          </div>
+          <div class="info">
+            <div class="main">uhsiuhiujar</div>
+            <div class="sub">joaijvojmawirovj</div>
+          </div>
+        </div> 
+      </div>
+
+      <div class="option" appImageSlider style="background-image: url('../../../assets/img/earpiece.jpg');">
+        <div class="shadow"></div>     
+        <div class="lable">
+          <div class="icon">
+            <mat-icon>favorite_border</mat-icon>
+          </div>
+          <div class="info">
+            <div class="main">uhsiuhiujar</div>
+            <div class="sub">joaijvojmawirovj</div>
+          </div>
+        </div> 
+      </div>
+      <div class="option" appImageSlider style="background-image: url('../../../assets/img/earpiece.jpg');">
+        <div class="shadow"></div>     
+        <div class="lable">
+          <div class="icon">
+            <mat-icon>favorite_border</mat-icon>
+          </div>
+          <div class="info">
+            <div class="main">favorite_border</div>
+            <div class="sub">joaijvojmawirovj</div>
+          </div>
+        </div> 
+      </div>
+      <div class="option" appImageSlider style="background-image: url('../../../assets/img/earpiece.jpg');">
+        <div class="shadow"></div>     
+        <div class="lable">
+          <div class="icon">
+            <mat-icon>favorite_border</mat-icon>
+          </div>
+          <div class="info">
+            <div class="main">favorite_border</div>
+            <div class="sub">joaijvojmawirovj</div>
+          </div>
+        </div> 
+      </div>
+      <div class="option" appImageSlider style="background-image: url('../../../assets/img/earpiece.jpg');">
+        <div class="shadow"></div>     
+        <div class="lable">
+          <div class="icon">
+            <mat-icon>favorite_border</mat-icon>
+          </div>
+          <div class="info">
+            <div class="main">favorite_border</div>
+            <div class="sub">joaijvojmawirovj</div>
+          </div>
+        </div> 
+      </div>
+      
+    </div>
+
+  </section>
+</div>
+
+<app-footer></app-footer>
+
+<router-outlet></router-outlet>

@@ -1,0 +1,33 @@
+.fotter{
+    padding-top: 30px;
+    //opacity: 0.2;
+    background-color: rgb(182, 251, 228);
+   
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+li{
+    a{
+        font-size: 16px;
+        color: grey;
+    }
+    a:hover{
+        text-decoration: none;
+        color: grey;
+    }
+}
+.fw-bold{
+    font-weight: bold;
+    font-size: 16px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.border-bottom {
+    border-bottom: 2px solid #cd208e!important;
+}
+
+.example-spacer {
+    flex: 1 1 auto;
+  }

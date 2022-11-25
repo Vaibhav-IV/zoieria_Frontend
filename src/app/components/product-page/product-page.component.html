@@ -1,0 +1,182 @@
+<div class = "main-content">
+  <div class = "card mat-elevation-z2">
+    <div class="row " *ngIf="currentProduct.id">
+      <div class="col-md-5">
+        <div>
+          <div class = "img-display">
+            <br><br>
+            <div class = "img-showcase zoom">
+            <img src="{{imageSrc}}">
+            </div>
+            <div>
+              <button *ngFor="let imageButton of imageButtons; let i = index" (click)="onClick(imageButton)" class="image a">
+                <img src="{{imageButton.src}}" alt=""/>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-7 bdr">
+        <div class = "product-content">
+          <h2 class = "product-title">{{currentProduct.title}}</h2>
+        
+    
+          <div class = "product-price">
+            <p class = "last-price">Old Price: <span>{{currentProduct.cost}} </span> </p>
+            <p class = "new-price">New Price: <span>{{currentProduct.cost}}</span></p>
+            
+            <h6>Tax included. Shipping calculated at checkout.</h6>
+
+          </div>
+          <div class = "purchase-info">
+            <input type = "number" min = "0" value = "1">
+            <button type = "button" class = "btn">
+              <mat-icon>add</mat-icon>
+              Add to Cart 
+            </button>
+          </div>
+          <div class = "product-detail">
+            <h2>about this item: </h2>
+            <p> {{currentProduct.description}} </p>
+            <ul>
+              <li> <i class="fab fa-sketch" ></i> Color: <span>Gold</span></li>
+              <li><i class="fab fa-sketch"></i>Material: <span>Stainless Steel</span></li>
+              <li><i class="fab fa-sketch"></i>Category: <span>Rings</span></li>
+              <li><i class="fab fa-sketch"></i>Size: <span>20 cm </span></li>
+              <li><i class="fab fa-sketch"></i>Specifications <span>Anti-tarnish & Premium Quality</span></li>
+            </ul>
+          </div>
+          <div class = "social-links">
+            <p>Share At: </p>
+            <a href = "#">
+              <i class="fa-brands fa-facebook-f"></i>
+            </a>
+            <a href = "#">
+              <i class="fa-brands fa-google"></i>
+            </a>
+            <a href = "#">
+              <mat-icon>add</mat-icon>
+            </a>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+    
+  </div>
+</div>
+
+
+
+<!-- <div class="row">
+    <mat-card *ngIf="currentProduct.id" class="product-card col-sm-12 m-10">
+        <mat-card-title>{{currentProduct.title}}</mat-card-title>
+        <mat-card-content>
+
+            <img src="../../../assets/img/butterflyRing.jpg" class="product-img" alt="">
+            
+        </mat-card-content>
+        <mat-card-actions>
+           
+        </mat-card-actions>
+    </mat-card>
+
+    <mat-card *ngIf="currentProduct.id" class="product-card col-sm-12">
+        <mat-card-title>{{currentProduct.title}}</mat-card-title>
+        <mat-card-subtitle class="text">{{currentProduct.id}}</mat-card-subtitle>
+        <mat-card-content>
+            <p>Description: {{currentProduct.description}}</p>
+            <p> cost: {{currentProduct.cost}}</p>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-button style="background: rgb(141, 237, 117)" class="badge badge-warning m-2 mr-2">
+                Save for Later
+            </button>
+            <button mat-button style="background: rgb(237, 117, 117)" class="badge badge-danger m-2 mr-2">
+                Add to cart
+            </button>
+
+
+        </mat-card-actions>
+    </mat-card>
+</div> -->
+
+
+
+<div class="main-content">
+
+  <h1 align="center" class="ex-text">You might like it</h1>
+    <!-- doing it on row -->
+    <div class="row">
+      <!-- 16px is gap btn the two cards and grid is assuring that it will be in grid mode -->
+      <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12"
+        *ngFor="let product of relatedProducts; let i = index">
+        <!-- here 50% is saying there will be 2 cards on a page  *ngIf="product.published === true" -->
+        <!-- have to add publshed true and false condition here -->
+        
+          <mat-card class="card-wrapper">
+  
+            <img [class.active]='i == currentIndex' routerLink="/home/{{product.id}}"
+              (click)="setActiveProduct(product,i)" class="card-image" mat-card-image width="250px" height="250px"              src="./../../../assets/img/butterflyRing.jpg" alt="Product Photo">
+  
+            <div class="sale-tag pl-2 pt-1">
+              SALE
+            </div>
+  
+            <mat-card-content class="description">
+              <p [class.active]='i == currentIndex' routerLink="/home/{{product.id}}"
+                (click)="setActiveProduct(product,i)" class="prd-text"> {{product.cost}}
+              </p>
+              <h3 class="prd-text" style="text-align:left;float:left;">{{product.title}}</h3>
+              <!-- <s style="text-align:right;float:right; margin-top: 4px;"> {{product.cost}}</s> -->
+  
+              <div class="cart-btn"><button mat-button style="background-color: #c68e5b;">Add ❤</button></div>
+            </mat-card-content>
+  
+          </mat-card>
+  
+        
+  
+      </div>
+    </div>
+  </div>
+
+    <!-- <section> begin ============================-->
+      <section class="main-content">
+        <div class="">
+    
+          <h1 align="center" class="ex-text">Be Excluise</h1>
+    
+          <div class="row g-2">
+    
+            <div class="col-md-6">
+              <div class="p-4 d-flex flex-column justify-content-center text-bg">
+                <h4>Exclusive collection 2021</h4>
+                <h1 class="fw-semi-bold lh-sm fs-4 fs-lg-5 fs-xl-6">Be exclusive</h1>
+                <p>The best everyday option in a Super Saver range within a reasonable price. It is our
+                  responsibility to keep you 100 percent stylish. Be smart &amp; , trendy with us.</p>
+                <div class="d-grid gap-2 d-md-block"><a class="btn btn-lg btn-dark" href="#" role="button">Explore</a></div>
+              </div>
+            </div>
+    
+            <div class="col-md-6">
+              <div class="card"><img height="552px" src="assets/img/necklace.jpg" alt="..." />
+                <div class="card-img-overlay bg-dark-gradient">
+                  <div class="d-flex align-items-end justify-content-center"><a class="btn btn-lg text-light fs-1" href="#!"
+                      role="button">Outfit<svg class="bi bi-arrow-right-short" width="23" height="23" fill="currentColor"
+                        viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                          d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z">
+                        </path>
+                      </svg></a></div>
+                </div>
+              </div>
+            </div>
+    
+          </div>
+        </div><!-- end of .container-->
+      </section><!-- <section> close ============================-->
+      <!-- ============================================-->
+    

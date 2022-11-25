@@ -1,0 +1,50 @@
+<div class="main-div">
+    <mat-card >
+      <mat-toolbar color="primary">Login Page</mat-toolbar>
+      <form *ngIf="!isLoggedIn" name="form"
+        (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+        <!-- Username -->
+        <div class="form-group">
+          <input type="text" class="form-control" name="username" [(ngModel)]="form.username" placeholder="Username"
+            required #username="ngModel" [ngClass]="{ 'is-invalid': f.submitted && username.errors }" />
+          <div *ngIf="username.errors && f.submitted" class="invalid-feedback">
+            Username is required!
+          </div>
+        </div>
+        <!-- Password  -->
+        <div class="form-group">
+          <input type="password" class="form-control" name="password" placeholder="Password" [(ngModel)]="form.password"
+            required ng-pattern="/^(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,20}$/" #password="ngModel"
+            [ngClass]="{ 'is-invalid': f.submitted && password.errors }" />
+          <div *ngIf="password.errors && f.submitted" class="invalid-feedback">
+            <div *ngIf="password.errors['required']">Password is required</div>
+            <div *ngIf="password.errors['ng-pattern']">
+              Password should be at least 8 characters long and should contain one number,one character and one special
+              character
+            </div>
+          </div>
+        </div>
+  
+  
+        <button mat-stroked-button color="primary">
+          Login
+        </button>
+  
+  
+  
+        <label>If new user: </label>
+        <a mat-stroked-button color="primary" [routerLink]="['/register']">Register</a>
+  
+  
+  
+        <div *ngIf="f.submitted && isLoginFailed" class="alert alert-danger" role="alert">
+          Login failed: {{ errorMessage }}
+        </div>
+  
+      </form>
+  
+      <div class="alert alert-success" *ngIf="isLoggedIn">
+        Logged in as {{ roles }}.
+      </div>
+    </mat-card>
+  </div>

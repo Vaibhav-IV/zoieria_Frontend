@@ -1,0 +1,45 @@
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }
+
+::ng-deep mat-dialog-container {
+  background-color:rgb(208, 247, 149)  !important;
+}
+
+mat-input{
+  color: black;
+}
+
+mat-select{
+  color: #ed1616;
+}
+
+label{
+  color: black;
+}
+
+::ng-deep button{
+  color: aqua;
+  background-color: black;
+}
+
+.text{
+  color: black;
+}
+
+:host ::ng-deep .mat-slide-toggle.mat-checked:not(.mat-disabled) .mat-slide-toggle-bar {
+  background-color: #ed1616 ;
+}
+
+:host ::ng-deep  .mat-slide-toggle.mat-checked:not(.mat-disabled) .mat-slide-toggle-thumb {
+  background-color: #49c5b6 ;
+}
+
+::ng-deep .mat-select-value{    
+  color: rgb(222, 18, 18)!important;  }

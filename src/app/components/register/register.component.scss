@@ -1,0 +1,36 @@
+
+mat-card,mat-toolbar{
+
+
+    border: 0.5px solid #000;
+    border-radius: 30px !important;
+    padding:10px;
+  }
+  
+  .mat-card{
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+  
+  .mat-toolbar{
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .mat-radio-button ~ .mat-radio-button {
+    margin-left: 16px;
+  }
+  
+  input[type="radio"] {
+    margin-right: 0;
+  }
+  .inline-radio{
+  display: flex;
+  overflow: hidden;
+  
+  }
+  
+  
+  .alert{
+    margin-top: 20px;
+  }

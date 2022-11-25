@@ -1,0 +1,133 @@
+<div *ngIf="currentUser; else loggedOut" class="row">
+    <div class="col-md-3">
+      <div class="card card-user">
+        <div class="card-body">
+          <div class="author">
+            <a href="#">
+              <img class="avatar border-gray profile-img" src="../../../assets/img/flower2.jpg" width="300px" height="250px" alt="...">
+              <h3 class="title">{{ currentUser.username }}</h3>
+            </a>
+          </div>
+        </div>
+        <div class="card-footer">
+          <hr>
+          <div class="button-container">
+            <div class="row">
+              <div class="col-lg-3 col-md-6 col-6 ml-auto">
+                <h3>12
+                  <br>
+                  <small>Orders</small>
+                </h3>
+              </div>
+              <div class="col-lg-4 col-md-6 col-6 ml-auto mr-auto">
+                <h3> 5 products
+                  <br>
+                  <small>Wishlist</small>
+                </h3>
+              </div>
+              <div class="col-lg-3 mr-auto">
+                <h3> 6 Products
+                  <br>
+                  <small>cart</small>
+                </h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-md-9">
+      <div class="card card-user">
+        <div class="card-header">
+          <h5 class="card-title">Edit Profile</h5>
+        </div>
+        <div class="card-body">
+          <form>
+            <div class="row">
+              <div class="col-md-3 px-1">
+                <div class="form-group">
+                  <label>Username</label>
+                  <input type="text" class="form-control" placeholder="Username" value="{{ currentUser.username }}">
+                </div>
+              </div>
+              <div class="col-md-4 pl-1">
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Email address</label>
+                  <input type="email" class="form-control" disabled="" placeholder="Email" value="{{ currentUser.email_id}}">
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 pr-1">
+                <div class="form-group">
+                  <label>First Name</label>
+                  <input type="text" class="form-control" placeholder="name" value="{{ currentUser.first_name}}">
+                </div>
+              </div>
+              <div class="col-md-6 pl-1">
+                <div class="form-group">
+                  <label>Last Name</label>
+                  <input type="text" class="form-control" placeholder="Last Name" value="{{ currentUser.last_name}}">
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label>Address</label>
+                  <input type="text" class="form-control" placeholder="Home Address" value="{{ currentUser.address}}">
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4 pr-1">
+                <div class="form-group">
+                  <label>City</label>
+                  <input type="text" class="form-control" placeholder="City" value="{{ currentUser.city}}">
+                </div>
+              </div>
+
+              <div class="col-md-4 pl-1">
+                <div class="form-group">
+                  <label>Postal Code</label>
+                  <input type="number" class="form-control" placeholder="ZIP Code" value="{{ currentUser.postalCode}}" >
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="update ml-auto mr-auto">
+                <button type="submit" class="btn btn-primary btn-round">Update Profile</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+   
+
+   <!-- <div class="container" *ngIf="currentUser; else loggedOut">
+    <h3>
+      <strong>{{ currentUser.username }}</strong> Profile
+    </h3>
+    <p>
+      <strong>Token:</strong>
+      {{ currentUser.accessToken.substring(0, 20) }} ...
+      {{ currentUser.accessToken.substr(currentUser.accessToken.length - 20) }}
+    </p>
+  <p>
+    <strong>Email:</strong>
+    {{ currentUser.email_id }}
+  </p>
+  <strong>Roles:</strong>
+  <ul>
+    <li *ngFor="let role of currentUser.roles">
+      {{ role }}
+    </li>
+  </ul>
+</div> -->
+
+<ng-template #loggedOut>
+  Please login.
+</ng-template>

@@ -1,0 +1,83 @@
+mat-nav-list {
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+}
+
+.mat-list-item {
+    color: #6f84a1;
+    height: 20px;
+    margin-bottom: 2px; //hoverinvg margin
+    margin: 2px;
+
+    &:hover {
+        color: #f2f5f7;
+    }
+
+    ::ng-deep {
+        .mat-list-item-content {
+            border-radius: 12px;
+
+            &:hover {
+                background: #77db5e;
+            }
+        }
+    }
+}
+
+mat-icon {
+    font-size: 1.5rem;
+    margin-right: 6px;
+}
+
+.list-item-active {
+    color: #ffffff;
+
+    ::ng-deep {
+        .mat-list-item-content {
+            background: #5db235;
+
+            &:hover {
+                background: #3563b2; //hovring while that paticular element is slected it wont cgange color as is same as when it is being hovered
+            }
+        }
+    }
+}
+
+//for mat divider yet to add
+.mat-divider {
+    border-top-width: 1px;
+    border-color: rgba(230, 56, 12, 0.91);
+}
+
+.user-profile{
+    padding-left: 63px;
+}
+
+.avatar {
+    margin-top: 16px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.name {
+    margin-top: 8px;
+    font-weight: normal;
+}
+
+.designation {
+    margin-top: 2px;
+    font-size: 0.7rem;
+    color: lightgrey;
+}
+
+mat-divider {
+    margin-top: 16px;
+    margin-bottom: 16px;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.catMenu{
+    margin-left: 20px;
+}

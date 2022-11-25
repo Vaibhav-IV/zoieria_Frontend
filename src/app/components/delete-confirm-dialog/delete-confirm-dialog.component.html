@@ -1,0 +1,9 @@
+<h2 mat-dialog-title class="text">Delete Confirmation</h2>
+<mat-dialog-content class="mat-typography">
+  <h3 style="color: black;" >Do you really want to delete</h3>
+ 
+</mat-dialog-content>
+<mat-dialog-actions align="end" class="text">
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button mat-button [mat-dialog-close]="true" (click)="removeAllProducts()">delete</button>
+</mat-dialog-actions>

@@ -1,0 +1,36 @@
+<div class="main-content">
+    <!-- doing it on row -->
+    <div class="row">
+      <!-- 16px is gap btn the two cards and grid is assuring that it will be in grid mode -->
+      <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12"
+        *ngFor="let product of products; let i = index">
+        <!-- here 50% is saying there will be 2 cards on a page  *ngIf="product.published === true" -->
+        <!-- have to add publshed true and false condition here -->
+        
+          <mat-card class="card-wrapper">
+  
+            <img [class.active]='i == currentIndex' routerLink="/home/{{product.id}}"
+              (click)="setActiveProduct(product,i)" class="card-image" mat-card-image
+              src="./../../../assets/img/butterflyRing.jpg" alt="Product Photo">
+  
+            <div class="sale-tag pl-2 pt-1">
+              SALE
+            </div>
+  
+            <mat-card-content class="description">
+              <p [class.active]='i == currentIndex' routerLink="/home/{{product.id}}"
+                (click)="setActiveProduct(product,i)" class="prd-text"> {{product.cost}}
+              </p>
+              <h3 class="prd-text" style="text-align:left;float:left;">{{product.title}}</h3>
+              <!-- <s style="text-align:right;float:right; margin-top: 4px;"> {{product.cost}}</s> -->
+  
+              <div class="cart-btn"><button mat-button style="background-color: #c68e5b;">Add ❤</button></div>
+            </mat-card-content>
+  
+          </mat-card>
+  
+        
+  
+      </div>
+    </div>
+  </div>

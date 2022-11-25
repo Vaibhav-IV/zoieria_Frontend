@@ -1,0 +1,268 @@
+.card-wrapper {
+    max-width: 400px;
+    outline: none;
+}
+
+.card-image {
+    background-size: cover;
+    height: 270px;
+}
+
+.main-content {
+    margin-bottom: 12px;
+    margin-top: 15px;
+    margin: 15px 30px 12px 30px; //top right bottom left
+}
+
+
+.mat-card {
+    box-shadow: none !important;
+    background: transparent;
+}
+
+.description {
+    color: black;
+    background: transparent !important;
+}
+
+.sale-tag {
+    background-color: rgb(222, 18, 18);
+    width: 55px;
+    height: 25px;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    border-radius: 6px;
+}
+
+.cart-btn {
+    width: 80px;
+    position: absolute;
+    top: 290px; //233 for on edge
+    right: 0px;
+}
+
+.cart-btn {
+    display: none;
+}
+
+.card-wrapper:hover .cart-btn {
+    display: block;
+}
+
+//end of card
+
+
+.text-bg {
+    background-color: rgba(0, 255, 0, 0.1);
+    color: black;
+    height: 552px;
+}
+
+
+
+.img-text {
+    font-size: 36px;
+    margin-top: -3rem;
+    text-decoration: none;
+    color: white !important;
+
+}
+
+a:hover {
+    color: hotpink;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+a:active {
+    text-decoration: none;
+}
+
+
+.ex-text {
+    color: black;
+    font-size: 36px;
+    margin: 60px;
+}
+
+.ex-images {
+    margin: 2px;
+}
+
+.cat-img {
+    height: 300px;
+}
+
+//for multiple image slider
+
+
+
+.options {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    overflow: hidden;
+    min-width: 800px;
+    max-width: 1200px;
+    width: calc(100% - 100px);
+    height: 400px;
+}
+
+@media screen and (max-width: 718px) {
+    .options {
+        min-width: 520px;
+    }
+
+    .options .options:nth-child(6) {
+        display: none;
+    }
+
+}
+
+@media screen and (max-width: 638) {
+    .options {
+        min-width: 440px;
+    }
+
+    .options .options:nth-child(5) {
+        display: none;
+    }
+
+}
+
+@media screen and (max-width: 558px) {
+    .options {
+        min-width: 360px;
+    }
+
+    .options .options:nth-child(4) {
+        display: none;
+    }
+
+}
+
+@media screen and (max-width: 478px) {
+    .options {
+        min-width: 280px;
+    }
+
+    .options .options:nth-child(3) {
+        display: none;
+    }
+
+}
+
+@media screen and (max-width: 398px) {
+    .options {
+        min-width: 200px;
+    }
+
+    .options .options:nth-child(2) {
+        display: none;
+    }
+
+}
+
+
+.options .option {
+    position: relative;
+    overflow: hidden;
+    min-width: 60px;
+    margin: 15px;
+    background-size: auto 120%;
+    background-position: center;
+    cursor: pointer;
+    transition: 0.5s, cubic-bezier(0.05, 0.61, 0.41, 0.95);
+}
+
+
+.options .option.active {
+    flex-grow: 10000;
+    transition: scale(1);
+    max-width: 600px;
+    margin: 0;
+    border-radius: 20px;
+    background-size: auto 100%;
+}
+
+.options .option.active .shadow {
+    box-shadow: inset 0 -120px -120px #000, inset 0 -120px -100px #000;
+}
+
+.options .option.active .label {
+    bottom: 20px;
+    left: 30px;
+}
+
+.options .option.active .label .info>div {
+    left: 10px !important;
+    opacity: 1;
+}
+
+.options .option:not(.active) {
+    flex-grow: 1;
+    border-radius: 30px;
+}
+
+.options .option:not(.active) .shadow {
+    bottom: -40px;
+    box-shadow: inset 0 -120px 0 -120px #000, inset 0 -120px #000;
+
+}
+
+.options .option:not(.active) .label {
+    bottom: 10px;
+    left: 10px;
+
+}
+
+.options .option:not(.active).label .info>div {
+    left: 20px;
+    opacity: 0;
+}
+
+.options .option .shadow {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 120px;
+    transition: 0.5s, cubic-bezier(0.05, 0.61, 0.41, 0.95);
+}
+
+// .options .option .label {
+//     display: flex;
+//     position: absolute;
+//     right: 0;
+//     height: 40px;
+//     transition: 0.5s, cubic-bezier(0.05, 0.61, 0.41, 0.95);
+// }
+
+// .options .option .label .icon {
+//     display: flex;
+//     flex-direction: row;
+//     justify-content: center;
+//     align-items: center;
+//     min-width: 90px;
+//     max-width: 40px;
+//     height: 40px;
+//     border-radius: 60%;
+//     background-color: #fff;
+// }
+
+// .options .option .label .info>div {
+//     position: absolute;
+//     transition: 0.5s, cubic-bezier(0.05, 0.61, 0.41, 0.95), opacity 0.5s ease-out;
+// }
+
+// .options .option .label .info .main {
+//     font-weight: bold;
+//     font-size: 1.2rem;
+// }
+
+// .options .option .label .info .main .sub {
+//     transition-delay: 0.1s;
+// }

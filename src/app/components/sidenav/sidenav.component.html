@@ -1,0 +1,71 @@
+<div class="user-profile">
+    <img class="avatar mat-elevation-z8" src="../../../assets/img/flower2.jpg" />
+
+    <h4 class="name">{{ username }}</h4>
+    <p class="designation">Software Engineer</p>
+</div>
+
+
+
+<mat-divider></mat-divider>
+
+
+<mat-nav-list class="catMenu" *ngFor="let cat of category;let i =index">
+    <a mat-list-item routerLinkActive="list-item-active" [class.active]='i == currentIndex' routerLink="/product/category/{{cat.id}}"
+        (click)="setActiveCategory(cat,i)" (click)="onSidenavClose()">{{cat.title}}</a>
+</mat-nav-list>
+
+<mat-divider></mat-divider>
+
+<mat-nav-list *ngIf="!this.isAdminVar">
+    <a mat-list-item routerLink="/home" routerLinkActive="list-item-active" (click)="onSidenavClose()">
+        <mat-icon>home</mat-icon><span class="nav-caption">My orders</span>
+    </a>
+    <a mat-list-item routerLink="/home1" routerLinkActive="list-item-active" (click)="onSidenavClose()">
+        <mat-icon>home</mat-icon><span class="nav-caption">My cart</span>
+    </a>
+    <a mat-list-item routerLink="/home2" routerLinkActive="list-item-active" (click)="onSidenavClose()">
+        <mat-icon>home</mat-icon><span class="nav-caption">Wishlist</span>
+    </a>
+    <a mat-list-item routerLink="/home3" routerLinkActive="list-item-active" (click)="onSidenavClose()">
+        <mat-icon>home</mat-icon><span class="nav-caption">Home</span>
+    </a>
+
+    <!-- for the trigger menu we want to expand -->
+
+    <mat-list-item [matMenuTriggerFor]="menu">
+        <mat-icon>unfold_more</mat-icon>
+        <a matline>Example</a>
+    </mat-list-item>
+    <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)="onSidenavClose()">View Something</button>
+    </mat-menu>
+
+</mat-nav-list>
+
+
+<mat-nav-list *ngIf="this.isAdminVar">
+    <a mat-list-item routerLink="/home" routerLinkActive="list-item-active" (click)="onSidenavClose()">
+        <mat-icon>home</mat-icon><span class="nav-caption">Users</span>
+    </a>
+    <a mat-list-item routerLink="/home1" routerLinkActive="list-item-active" (click)="onSidenavClose()">
+        <mat-icon>home</mat-icon><span class="nav-caption">Products</span>
+    </a>
+    <a mat-list-item routerLink="/home2" routerLinkActive="list-item-active" (click)="onSidenavClose()">
+        <mat-icon>home</mat-icon><span class="nav-caption">category</span>
+    </a>
+    <a mat-list-item routerLink="/home3" routerLinkActive="list-item-active" (click)="onSidenavClose()">
+        <mat-icon>home</mat-icon><span class="nav-caption">Home</span>
+    </a>
+
+    <!-- for the trigger menu we want to expand -->
+
+    <mat-list-item [matMenuTriggerFor]="menu">
+        <mat-icon>unfold_more</mat-icon>
+        <a matline>Example</a>
+    </mat-list-item>
+    <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)="onSidenavClose()">View Something</button>
+    </mat-menu>
+
+</mat-nav-list>

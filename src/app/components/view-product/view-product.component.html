@@ -1,0 +1,61 @@
+<div *ngIf="viewMode; else editable" class="col-md-6 col-sm-12">
+    <mat-card *ngIf="currentProduct.id" class="product-card mat-elevation-z4">
+        <mat-card-title>{{currentProduct.title}}</mat-card-title>
+        <mat-card-subtitle class="text">{{currentProduct.id}}</mat-card-subtitle>
+        <mat-card-content>
+            <p>Description: {{currentProduct.description}}</p>
+            <p> cost: {{currentProduct.cost}}</p>
+            <p>Active: {{currentProduct.published}}</p>
+        </mat-card-content>
+        <mat-card-actions>
+            <a routerLink="/{{ currentProduct.id }}"><button mat-button style="background: rgb(141, 237, 117)" class="badge badge-warning m-2 mr-2">
+                    edit
+                </button> </a>
+            <button mat-button style="background: rgb(237, 117, 117)" class="badge badge-danger m-2 mr-2" (click)="deleteProduct()">
+                Delete
+            </button>
+
+
+        </mat-card-actions>
+    </mat-card>
+    <p>{{message}}</p>
+
+    <div *ngIf="!currentProduct">
+        <br />
+        <p>Please click on a Product...</p>
+    </div>
+</div>
+
+<ng-template #editable class="col-md-6 col-sm-12">
+    <div *ngIf="currentProduct.id" class="edit-form text">
+        <h4>Product</h4>
+        <form>
+            <div class="form-group col-md-4">
+                <label for="title">Title</label>
+                <input type="text" class="form-control" id="title" [(ngModel)]="currentProduct.title" name="title" />
+            </div>
+            <div class="form-group col-md-4">
+                <label for="description">Description</label>
+                <input type="text" class="form-control" id="description" [(ngModel)]="currentProduct.description"
+                    name="description" />
+            </div>
+
+            <div class="form-group col-md-4">
+                <label for="description" class="mr-3">Activity</label>
+                <mat-slide-toggle id="published" name="published" [(ngModel)]="currentProduct.published"></mat-slide-toggle>
+            </div>
+        </form>
+        <button mat-button style="background: rgb(237, 117, 117)" class="mr-2 col-md-1" (click)="deleteProduct()">
+            Delete
+        </button>
+        <p>{{ message }}</p>
+        <button type="submit" mat-button style="background: rgb(141, 237, 117)" class="text mb-2 col-md-1" (click)="updateProduct()">
+            Update
+        </button>
+        <p>{{ message }}</p>
+    </div>
+    <div *ngIf="!currentProduct.id">
+        <br />
+        <p>Cannot access this Product...</p>
+    </div>
+</ng-template>

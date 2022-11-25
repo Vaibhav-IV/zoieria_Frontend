@@ -1,0 +1,261 @@
+<!-- <ng-container class="welcome-text" [ngSwitch]="stepperOrientation | async">
+  <div class="welcome-text" *ngSwitchCase="'horizontal'">Hey there Fellow User..! I hope your journey with us will we
+    wonderfull</div>
+  <div class="welcome-text" *ngSwitchCase="'vertical'">Hey there Fellow User..! I hope your journey with us will we
+    wonderfull</div>
+</ng-container>
+
+<mat-stepper class="example-stepper" [orientation]="(stepperOrientation | async)!">
+  <mat-step [stepControl]="registerFormGroup" label="Fill out your name">
+
+    <form [formGroup]="registerFormGroup">
+      
+      <mat-form-field appearance="outline">
+        <input type="text" matInput placeholder="First Name" formControlName="first_name">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <input type="text" matInput placeholder="Last Name" formControlName="last_name">
+      </mat-form-field>
+
+      <br>
+
+      <mat-radio-group formControlName="gender">
+        <mat-radio-button checked=true value="Male"> Male </mat-radio-button>
+        <mat-radio-button value="Female"> Female </mat-radio-button>
+        <mat-radio-button value="Other"> Other </mat-radio-button>
+      </mat-radio-group>
+
+      <div>
+        <button class="mt-5" mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+
+  </mat-step>
+
+  <mat-step [stepControl]="registerFormGroup" label="Fill out your phone number">
+    <form [formGroup]="registerFormGroup">
+
+      <mat-form-field appearance="outline">
+        <input type="email" matInput placeholder="Email" formControlName="email_id">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <input matInput [type]="hide ? 'password' : 'text'" placeholder="Password" formControlName="password">
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+      </mat-form-field>
+
+     
+
+
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+
+    </form>
+  </mat-step>
+
+  <mat-step [stepControl]="registerFormGroup" label="Fill out your address" optional>
+    <form [formGroup]="registerFormGroup">
+      
+       <mat-form-field appearance="outline">
+        <mat-label>Phone number</mat-label>
+        <input type="number" matInput placeholder="Contact Number" formControlName="contact_number">
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Address</mat-label>
+        <input type="text" matInput placeholder="Address" formControlName="address">
+      </mat-form-field>
+
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+
+
+  <mat-step>
+    <ng-template matStepLabel>One step to go</ng-template>
+    <p>You all are now done.</p>
+
+    <div>
+      <button mat-button matStepperPrevious>Back</button>
+      <button (click)="registerProcess()" mat-stroked-button style="background: rgb(141, 237, 117)"
+        type="submit">Register</button>
+    </div>
+  </mat-step>
+
+
+</mat-stepper> -->
+
+
+
+<div fxLayoutAlign="center center" fxFlexFill class="main-div">
+    <mat-card fxFlex="40">
+      <mat-toolbar color="primary">SignUp Page</mat-toolbar>
+      <form fxLayoutAlign="stretch" fxLayout="column" *ngIf="!isSuccessful" name="form"
+        (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+        <!-- First Name -->
+        <div class="form-group">
+          <input type="text" class="form-control" name="first_name" [(ngModel)]="form.first_name" required
+            placeholder="First Name" minlength="1" maxlength="20" #first_name="ngModel"
+            [ngClass]="{ 'is-invalid': f.submitted && first_name.errors }" />
+          <div class="invalid-feedback" *ngIf="first_name.errors && f.submitted">
+            <div *ngIf="first_name.errors['required']">First Name is required</div>
+            <div *ngIf="first_name.errors['minlength']">
+              First Name must be at least 1 character
+            </div>
+            <div *ngIf="first_name.errors['maxlength']">
+              First Name must be at most 20 characters
+            </div>
+          </div>
+        </div>
+  
+  
+        <!-- Last Name -->
+        <div class="form-group">
+          <input type="text" class="form-control" name="last_name" [(ngModel)]="form.last_name" required
+            placeholder="Last Name" minlength="1" maxlength="20" #last_name="ngModel"
+            [ngClass]="{ 'is-invalid': f.submitted && last_name.errors }" />
+          <div class="invalid-feedback" *ngIf="last_name.errors && f.submitted">
+            <div *ngIf="last_name.errors['required']">Last Name is required</div>
+            <div *ngIf="last_name.errors['minlength']">
+              Last name must be at least characters
+            </div>
+            <div *ngIf="last_name.errors['maxlength']">
+              Last name must be at most 20 characters
+            </div>
+          </div>
+        </div>
+  
+        <!-- Username -->
+        <div class="form-group">
+          <input type="text" class="form-control" name="username" [(ngModel)]="form.username" required
+            placeholder="Username" minlength="3" maxlength="20" #username="ngModel"
+            [ngClass]="{ 'is-invalid': f.submitted && username.errors }" />
+          <div class="invalid-feedback" *ngIf="username.errors && f.submitted">
+            <div *ngIf="username.errors['required']">Username is required</div>
+            <div *ngIf="username.errors['minlength']">
+              Username must be at least 3 character
+            </div>
+            <div *ngIf="username.errors['maxlength']">
+              Username must be at most 20 characters
+            </div>
+          </div>
+        </div>
+  
+        <!-- Gender -->
+        <!-- <div class="form-group">
+          <label for="gender">Gender</label>
+          <div class="inline-radio">
+            Male
+            <input type="radio" class="form-control" value="Male" name="gender" [(ngModel)]="form.gender"
+              #gender="ngModel">
+            Female
+            <input type="radio" class="form-control" value="Female" name="gender" [(ngModel)]="form.gender"
+              #gender="ngModel">
+            Other
+            <input type="radio" class="form-control" value="Other" name="gender" [(ngModel)]="form.gender"
+              #gender="ngModel">
+          </div>
+        </div> -->
+  
+        <div class="form-group">
+          <label for="gender">Gender</label>
+          <mat-radio-group aria-label="Select an option">
+            <mat-radio-button class="form-control" value="Male" name="gender" [(ngModel)]="form.gender" #gender="ngModel">
+              Option 1</mat-radio-button>
+            <mat-radio-button class="form-control" value="Female" name="gender" [(ngModel)]="form.gender"
+              #gender="ngModel">
+              Option 2</mat-radio-button>
+            <mat-radio-button class="form-control" value="Other" name="gender" [(ngModel)]="form.gender"
+              #gender="ngModel">
+              Option 3</mat-radio-button>
+          </mat-radio-group>
+        </div>
+  
+  
+  
+  
+        <!-- Contact Number -->
+        <div class="form-group">
+          <input type="text" class="form-control" name="contact_number" placeholder="Contact number"
+            [(ngModel)]="form.contact_number" #contact_number="ngModel" />
+        </div>
+  
+        <!-- Address -->
+        <div class="form-group">
+          <input type="text" class="form-control" name="address" [(ngModel)]="form.address" placeholder="Address"
+            maxlength="30" #address="ngModel" [ngClass]="{ 'is-invalid': f.submitted && address.errors }" />
+          <div class="invalid-feedback" *ngIf="address.errors && f.submitted">
+            <div *ngIf="address.errors['maxlength']">
+              Address must be at most 30 characters
+            </div>
+          </div>
+        </div>
+  
+        <!-- Email Id -->
+        <div class="form-group">
+          <input type="email" class="form-control" name="email_id" [(ngModel)]="form.email_id" required
+            placeholder="Email" email #email_id="ngModel" [ngClass]="{ 'is-invalid': f.submitted && email_id.errors }" />
+          <div class="invalid-feedback" *ngIf="email_id.errors && f.submitted">
+            <div *ngIf="email_id.errors['required']">Email is required</div>
+            <div *ngIf="email_id.errors['email_id']">
+              Email must be a valid email address
+            </div>
+          </div>
+        </div>
+  
+        <!-- Password -->
+        <div class="form-group">
+          <input type="password" class="form-control" name="password" [(ngModel)]="form.password" required
+            placeholder="Password" ng-pattern="/^(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,20}$/"
+            #password="ngModel" [ngClass]="{ 'is-invalid': f.submitted && password.errors }" />
+          <div class="invalid-feedback" *ngIf="password.errors && f.submitted">
+            <div *ngIf="password.errors['required']">Password is required</div>
+            <div *ngIf="password.errors['ng-pattern']">
+              Password should be at least 8 characters long and should contain one number,one character and one special
+              character
+            </div>
+          </div>
+        </div>
+  
+        <!-- Retype Password
+          <div class="form-group">
+            <label for="password">Retype Password</label>
+            <input
+              type="password"
+              class="form-control"
+              name="retypepassword"
+              [(ngModel)]="form.retypepassword"
+              required
+              minlength="6"
+              #retypepassword="ngModel"
+              [ngClass]="{ 'is-invalid': f.submitted && retypepassword.errors }"
+            />
+            <div class="invalid-feedback" *ngIf="retypepassword.errors && f.submitted">
+              <div *ngIf="retypepassword.errors['required']">Retype Password is required</div>
+              <div *ngIf="retypepassword.errors['minlength']">
+                Does not match.
+              </div>
+            </div>
+          </div> -->
+  
+        <div class="form-group">
+          <button class="btn btn-primary btn-block">Sign Up</button>
+        </div>
+  
+        <div class="alert alert-warning" *ngIf="f.submitted && isSignUpFailed">
+          Signup failed!<br />{{ errorMessage }}
+        </div>
+      </form>
+  
+      <div class="alert alert-success" *ngIf="isSuccessful">
+        Your registration is successful!
+      </div>
+    </mat-card>
+  </div>

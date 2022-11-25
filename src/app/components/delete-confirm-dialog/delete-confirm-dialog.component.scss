@@ -1,0 +1,9 @@
+.text{
+    color: black;
+}
+
+::ng-deep mat-dialog-container {
+    background-color:rgb(208, 247, 149)  !important;
+    //padding: 0px 0px 0px 0px !important;
+    //overflow: hidden !important;
+  }

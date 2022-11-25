@@ -1,0 +1,62 @@
+<mat-toolbar color="primary" class="">
+    <div class="d-sm-none menu-btn">
+        <button mat-icon-button (click)="onToggleSidenav()">
+            <mat-icon>menu</mat-icon>
+        </button>
+    </div>
+
+    <div>
+        <img class="logo-image" routerLink="/" src="../../../assets/img/logo (1).png" alt="logo">
+    </div>
+
+    <span class="example-spacer"></span>
+
+    <div class="d-none d-sm-block" *ngFor="let cat of category;let i =index">
+        <ul class="navigation-items d-flex">
+            <li>
+                <a [class.active]='i == currentIndex' routerLink="/product/category/{{cat.id}}"
+                    (click)="setActiveCategory(cat,i)">{{cat.title}}</a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- <div class="dropdown">
+        <button class="dropbtn">Dropdown</button>
+        <div class="dropdown-content">
+            <a href="#">Link 1</a>
+            <a href="#">Link 2</a>
+            <a href="#">Link 3</a>
+        </div>
+    </div> -->
+
+
+
+    <form  class="navigation-items d-flex">
+        <input  type="text" name="search" placeholder="Search.." class="form-control" id="searchedTitle" [(ngModel)]="searchedTitle">
+        <mat-icon class="search-icon" (click)="sendData()">search</mat-icon>
+    </form>
+
+    <span class="example-spacer"></span>
+
+
+
+    <div class="menu-icons" *ngIf="!isLoggedIn">
+        <mat-icon class="home-icons" routerLink="user/register">fiber_new</mat-icon>
+        <mat-icon class="home-icons" routerLink="user/login">person_add</mat-icon>
+    </div>
+
+
+    <ul class="navigation-items d-flex" *ngIf="isLoggedIn">
+        <li>
+            <a href="/profile" class="nav-link mr-3" routerLink="user/userProfile"> Hi {{ username }} !</a>
+        </li>
+    </ul>
+
+
+    <div class="menu-icons" *ngIf="isLoggedIn">
+        <mat-icon class="home-icons" (click)="logout()">exit_to_app</mat-icon>
+        <mat-icon class="home-icons">favorite_border</mat-icon>
+        <mat-icon class="home-icons" matBadge="2">shopping_cart</mat-icon>
+    </div>
+
+</mat-toolbar>

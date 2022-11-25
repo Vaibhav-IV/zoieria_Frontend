@@ -1,0 +1,57 @@
+.card-wrapper {
+    max-width: 400px;
+    outline: none;
+}
+
+.card-image {
+    background-size: cover;
+    height: 270px;
+}
+
+.main-content {
+    margin-bottom: 12px;
+    margin-top: 15px;
+    margin:15px 30px 12px 30px; //top right bottom left
+}
+
+
+.mat-card {
+    box-shadow: none !important;
+    background: transparent;
+}
+
+.description {
+    color: black;
+}
+
+.sale-tag {
+    background-color: rgb(222, 18, 18);
+    width: 55px;
+    height: 25px;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    border-radius: 6px;
+}
+
+.cart-btn {
+    width: 80px;
+    position: absolute;
+    top: 290px; //233 for on edge
+    right: 0px;
+}
+
+.cart-btn {
+    display: none;
+}
+
+.card-wrapper:hover .cart-btn {
+    display: block;
+}
+
+
+.ex-text {
+    color: black;
+    font-size: 36px;
+    margin: 60px;
+}
