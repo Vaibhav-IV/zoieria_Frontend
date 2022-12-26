@@ -10,7 +10,7 @@
 
             <img [class.active]='i == currentIndex' routerLink="/home/{{product.id}}"
               (click)="setActiveProduct(product,i)" class="card-image" mat-card-image
-              src="./../../../assets/img/butterflyRing.jpg" alt="Product Photo">
+              src="./../../../../assets/img/{{product.imageTitle}}" alt="Product Photo">
 
             <div class="sale-tag pl-2 pt-1">
               SALE
@@ -43,7 +43,7 @@
   <!-- ============================================-->
   <!-- <section> begin ===================== style="margin-top: -23rem !important;"=======-->
   <section class="py-0">
-    <h1 align="center" class="ex-text">Shop for Youe Dear once</h1>
+    <h1 align="center" class="ex-text">Shop for Your Dear once</h1>
     <div class="row g-0">
       <div class="col-md-6 col-sm-12 pr-1">
         <div class="card card-span"> <img height="552px" src="assets/img/her.png" alt="..." />
@@ -223,7 +223,7 @@
 
     <div class="options">
       <div class="option active" appImageSlider style="background-image: url('../../../assets/img/earpiece.jpg');">
-        <div class="shadow"></div>     
+        <div class="shadow"></div>
         <div class="lable">
           <div class="icon">
             <mat-icon>favorite_border</mat-icon>
@@ -232,11 +232,11 @@
             <div class="main">uhsiuhiujar</div>
             <div class="sub">joaijvojmawirovj</div>
           </div>
-        </div> 
+        </div>
       </div>
 
       <div class="option" appImageSlider style="background-image: url('../../../assets/img/earpiece.jpg');">
-        <div class="shadow"></div>     
+        <div class="shadow"></div>
         <div class="lable">
           <div class="icon">
             <mat-icon>favorite_border</mat-icon>
@@ -245,11 +245,11 @@
             <div class="main">uhsiuhiujar</div>
             <div class="sub">joaijvojmawirovj</div>
           </div>
-        </div> 
+        </div>
       </div>
 
       <div class="option" appImageSlider style="background-image: url('../../../assets/img/earpiece.jpg');">
-        <div class="shadow"></div>     
+        <div class="shadow"></div>
         <div class="lable">
           <div class="icon">
             <mat-icon>favorite_border</mat-icon>
@@ -258,10 +258,10 @@
             <div class="main">uhsiuhiujar</div>
             <div class="sub">joaijvojmawirovj</div>
           </div>
-        </div> 
+        </div>
       </div>
       <div class="option" appImageSlider style="background-image: url('../../../assets/img/earpiece.jpg');">
-        <div class="shadow"></div>     
+        <div class="shadow"></div>
         <div class="lable">
           <div class="icon">
             <mat-icon>favorite_border</mat-icon>
@@ -270,10 +270,10 @@
             <div class="main">favorite_border</div>
             <div class="sub">joaijvojmawirovj</div>
           </div>
-        </div> 
+        </div>
       </div>
       <div class="option" appImageSlider style="background-image: url('../../../assets/img/earpiece.jpg');">
-        <div class="shadow"></div>     
+        <div class="shadow"></div>
         <div class="lable">
           <div class="icon">
             <mat-icon>favorite_border</mat-icon>
@@ -282,10 +282,10 @@
             <div class="main">favorite_border</div>
             <div class="sub">joaijvojmawirovj</div>
           </div>
-        </div> 
+        </div>
       </div>
       <div class="option" appImageSlider style="background-image: url('../../../assets/img/earpiece.jpg');">
-        <div class="shadow"></div>     
+        <div class="shadow"></div>
         <div class="lable">
           <div class="icon">
             <mat-icon>favorite_border</mat-icon>
@@ -294,14 +294,20 @@
             <div class="main">favorite_border</div>
             <div class="sub">joaijvojmawirovj</div>
           </div>
-        </div> 
+        </div>
       </div>
-      
+
     </div>
 
   </section>
 </div>
 
 <app-footer></app-footer>
+
+
+<df-messenger intent="WELCOME" chat-title="Zoieria" agent-id="6abaf811-100a-4b5d-bc92-2b017aefa736"
+  language-code="en"></df-messenger>
+
+
 
 <router-outlet></router-outlet>

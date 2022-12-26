@@ -56,7 +56,7 @@
     <div class="menu-icons" *ngIf="isLoggedIn">
         <mat-icon class="home-icons" (click)="logout()">exit_to_app</mat-icon>
         <mat-icon class="home-icons">favorite_border</mat-icon>
-        <mat-icon class="home-icons" matBadge="2">shopping_cart</mat-icon>
+        <mat-icon class="home-icons" matBadge="2" routerLink="user/cart" >shopping_cart</mat-icon>
     </div>
 
 </mat-toolbar>

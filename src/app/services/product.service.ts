@@ -3,12 +3,16 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, tap, catchError } from 'rxjs'
 
 import { Product } from '../models/Product';
+import { Image } from '../models/image';
 import { ErrorHandlerService } from './error-handler.service';
 
 const baseUrl = "http://localhost:3000/admin/products"
 const catBaseUrl = "http://localhost:3000/admin/products/productCategory"
 const catRelBaseUrl =  "http://localhost:3000/admin/products/productCategory/related"
 const baseSearchUrl = "http://localhost:3000/admin/products/search" 
+
+const imgURL = "http://localhost:3000/imageProduct"
+const allImgURL = "http://localhost:3000/images/all"
 
 @Injectable({
   providedIn: 'root'
@@ -54,6 +58,14 @@ export class ProductService {
         catchError(
           this.errorHandlerService.handleError<Product[]>("FetchALl error in services", [])
         ));
+  }
+
+  getImages(id:any): Observable<Image[]> {
+    return this.http.get<Image[]>(`${imgURL}/${id}`)   //change baseURL here
+  }
+
+  getAllImages(): Observable<Image[]>{
+    return this.http.get<Image[]>(`${allImgURL}`) 
   }
 
   get(id: any): Observable<any> {

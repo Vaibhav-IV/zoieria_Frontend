@@ -4,7 +4,8 @@ import { Product } from 'src/app/models/Product';
 
 import { ProductService } from 'src/app/services/product.service';
 import { UserService } from 'src/app/services/user.service';
-
+import { MatDialog } from '@angular/material/dialog';
+import { ChatbotComponent } from '../chatbot/chatbot.component';
 
 @Component({
   selector: 'app-home',
@@ -16,7 +17,8 @@ export class HomeComponent implements OnInit {
   content?: string;
 
   constructor(private productService: ProductService,
-    private userService: UserService) { }
+    private userService: UserService,
+    public dialog: MatDialog) { }
 
   products?: Product[]
   currentProduct: Product = {}
@@ -64,5 +66,11 @@ export class HomeComponent implements OnInit {
     console.log(index, product);
   }
 
+  openchatBot() {
+    const dialogRef = this.dialog.open(ChatbotComponent, {
+      height: '500px',
+      width: '380px',
+    });
+  }
 
 }

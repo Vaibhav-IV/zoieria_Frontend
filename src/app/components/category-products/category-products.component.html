@@ -11,7 +11,7 @@
   
             <img [class.active]='i == currentIndex' routerLink="/home/{{product.id}}"
               (click)="setActiveProduct(product,i)" class="card-image" mat-card-image
-              src="./../../../assets/img/butterflyRing.jpg" alt="Product Photo">
+              src="./../../../../assets/img/{{product.imageTitle}}" alt="Product Photo">
   
             <div class="sale-tag pl-2 pt-1">
               SALE

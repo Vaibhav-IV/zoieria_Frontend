@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule,CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -51,6 +51,10 @@ import { ViewProductComponent } from './components/view-product/view-product.com
 import { ImageSliderDirective } from './directives/image-slider.directive';
 import { FooterComponent } from './components/footer/footer.component';
 import { SearchedProductsComponent } from './components/searched-products/searched-products.component';
+import { ChatbotComponent } from './components/chatbot/chatbot.component';
+import { AnalysisComponent } from './components/analysis/analysis.component';
+import { CartComponent } from './components/cart/cart.component';
+import { CongratsComponent } from './components/congrats/congrats.component';
 
 @NgModule({
   declarations: [
@@ -70,7 +74,11 @@ import { SearchedProductsComponent } from './components/searched-products/search
     ViewProductComponent,
     ImageSliderDirective,
     FooterComponent,
-    SearchedProductsComponent
+    SearchedProductsComponent,
+    ChatbotComponent,
+    AnalysisComponent,
+    CartComponent,
+    CongratsComponent
   ],
   imports: [
     BrowserModule,
@@ -104,6 +112,10 @@ import { SearchedProductsComponent } from './components/searched-products/search
     MatBadgeModule
   ],
   providers: [httpInterceptorProviders],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule { }
+
+
+//http://zoieria.madcraftfirm.com

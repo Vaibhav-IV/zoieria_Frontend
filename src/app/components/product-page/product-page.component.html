@@ -1,4 +1,4 @@
-<div class = "main-content">
+<!-- <div class = "main-content">
   <div class = "card mat-elevation-z2">
     <div class="row " *ngIf="currentProduct.id">
       <div class="col-md-5">
@@ -6,13 +6,17 @@
           <div class = "img-display">
             <br><br>
             <div class = "img-showcase zoom">
-            <img src="{{imageSrc}}">
+            <img src="./../../../../assets/img/{{this.imageSrc}}">
             </div>
+    
+
             <div>
-              <button *ngFor="let imageButton of imageButtons; let i = index" (click)="onClick(imageButton)" class="image a">
-                <img src="{{imageButton.src}}" alt=""/>
+              <button *ngFor="let img of productImages;  let i = index"  (click)="onClick(imageButtons)" class="image a">
+                <img src="./../../../../assets/img/{{img.name}}" alt="">
               </button>
             </div>
+
+
           </div>
         </div>
       </div>
@@ -29,8 +33,9 @@
             <h6>Tax included. Shipping calculated at checkout.</h6>
 
           </div>
+          [(ngModel)]="cart.quantity"
           <div class = "purchase-info">
-            <input type = "number" min = "0" value = "1">
+            <input type = "number" min = "0" value = "1" id="quantity", name="quantity" >
             <button type = "button" class = "btn">
               <mat-icon>add</mat-icon>
               Add to Cart 
@@ -66,8 +71,14 @@
     </div>
     
   </div>
-</div>
+</div> -->
 
+       
+            <!-- <div>
+              <button *ngFor="let imageButton of imageButtons; let i = index" (click)="onClick(imageButton)" class="image a">
+                <img src="{{imageButton.src}}" alt=""/>
+              </button>
+            </div> -->
 
 
 <!-- <div class="row">
@@ -102,6 +113,78 @@
         </mat-card-actions>
     </mat-card>
 </div> -->
+
+
+<div class = "main-content">
+  <div class = "card mat-elevation-z2">
+    <div class="row " *ngIf="currentProduct.id">
+      <div class="col-md-5">
+        <div>
+          <div class = "img-display">
+            <br><br>
+            <div class = "img-showcase zoom">
+            <img src="./../../../../assets/img/{{this.imageSrc}}">
+            </div>
+
+            <div>
+              <button *ngFor="let img of productImages;  let i = index" (click)="onClick(imageButtons)" class="image a">
+                <img src="./../../../../assets/img/{{img.name}}" alt=""/>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-7 bdr">
+        <div class = "product-content">
+          <h2 class = "product-title">{{currentProduct.title}}</h2>
+        
+    
+          <div class = "product-price">
+            <p class = "last-price">Old Price: <span>{{currentProduct.cost}} </span> </p>
+            <p class = "new-price">New Price: <span>{{currentProduct.cost}}</span></p>
+            
+            <h6>Tax included. Shipping calculated at checkout.</h6>
+
+          </div>
+          <div class = "purchase-info">
+            <input type = "number" min = "0" value = "cart.quantity" id="quantity" name="quantity" [(ngModel)]="cart.quantity">
+            <button type = "button" class = "btn" (click)="addToCart()">
+              <mat-icon>add</mat-icon>
+              Add to Cart 
+            </button>
+          </div>
+          <div class = "product-detail">
+            <h2>about this item: </h2>
+            <p> {{currentProduct.description}} </p>
+            <ul>
+              <li> <i class="fab fa-sketch" ></i> Color: <span>Gold</span></li>
+              <li><i class="fab fa-sketch"></i>Material: <span>Stainless Steel</span></li>
+              <li><i class="fab fa-sketch"></i>Category: <span>Rings</span></li>
+              <li><i class="fab fa-sketch"></i>Size: <span>20 cm </span></li>
+              <li><i class="fab fa-sketch"></i>Specifications <span>Anti-tarnish & Premium Quality</span></li>
+            </ul>
+          </div>
+          <div class = "social-links">
+            <p>Share At: </p>
+            <a href = "#">
+              <i class="fa-brands fa-facebook-f"></i>
+            </a>
+            <a href = "#">
+              <i class="fa-brands fa-google"></i>
+            </a>
+            <a href = "#">
+              <mat-icon>add</mat-icon>
+            </a>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+    
+  </div>
+</div>
 
 
 

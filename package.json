@@ -23,6 +23,7 @@
     "@ng-bootstrap/ng-bootstrap": "^13.1.1",
     "@popperjs/core": "^2.11.6",
     "bootstrap": "^5.2.2",
+    "powerbi-client": "^2.22.0",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
@@ -32,6 +33,7 @@
     "@angular/cli": "~14.2.0",
     "@angular/compiler-cli": "^14.0.0-next.0",
     "@angular/localize": "^14.2.11",
+    "@types/gtag.js": "^0.0.12",
     "@types/jasmine": "~4.0.0",
     "jasmine-core": "~4.3.0",
     "karma": "~6.4.0",

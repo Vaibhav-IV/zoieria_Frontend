@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
-
+import { Image } from 'src/app/models/image';
 import { Product } from 'src/app/models/Product';
 import { ProductService } from 'src/app/services/product.service';
 
@@ -24,6 +24,7 @@ export class SearchedProductsComponent implements OnInit {
       console.log(this.searchedTitle);
       this.searchByTitle(this.searchedTitle)
     });
+    this.getProductImages()
   }
 
   //for products
@@ -54,6 +55,21 @@ export class SearchedProductsComponent implements OnInit {
     this.currentIndex = index
     this.currentProduct = product
     console.log(index, product.id);
+  }
+
+  productImages?: Image[] = []
+  imageSrc = '../../../assets/img/modernJwel.jpeg';
+  getProductImages(): void {
+    console.log("usdhucyhsadocjiadbc98hdc aso9dhhsd voiHSD IU");
+    this.productService.getAllImages()
+      .subscribe({
+        next: (data) => {
+          this.productImages = data
+          console.log(this.productImages, "udhc98hdou80dvshds oiDVH");
+          this.imageSrc = this.productImages[0].name!;
+          console.log(this.imageSrc);
+        }
+      })
   }
 
 }

@@ -3,7 +3,13 @@ export class Product{
     title?: string;
     description?: string;
     cost?:Number;
+    MRP?:Number
     image?:string;
     published?:boolean;
-    categoryId?:Number
+    color?:string;
+    size?:string
+    material?:string
+    categoryId?:Number;
+    imageTitle?:string
+
 }
