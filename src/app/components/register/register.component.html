@@ -94,8 +94,8 @@
 
 
 
-<div fxLayoutAlign="center center" fxFlexFill class="main-div">
-    <mat-card fxFlex="40">
+<div class="main-div center">
+    <mat-card fxFlex="40" style="background-color: rgb(236, 221, 221);">
       <mat-toolbar color="primary">SignUp Page</mat-toolbar>
       <form fxLayoutAlign="stretch" fxLayout="column" *ngIf="!isSuccessful" name="form"
         (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
@@ -257,5 +257,9 @@
       <div class="alert alert-success" *ngIf="isSuccessful">
         Your registration is successful!
       </div>
+
+      <div class="alert alert-success loginRedirect" *ngIf="isSuccessful" routerLink="/user/login" >
+        Back to home page
+       </div>
     </mat-card>
   </div>

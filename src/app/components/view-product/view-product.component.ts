@@ -22,8 +22,12 @@ export class ViewProductComponent implements OnInit {
   @Input() currentProduct: Product ={
     title: '',
     description:'',
-    cost: 10,
+    // cost: ,
+    // mrp: ,
     image: '',
+    color:'',
+    size:'',
+    material:'',
     published:false
   }
 

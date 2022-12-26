@@ -24,11 +24,14 @@ export class HomeComponent implements OnInit {
   currentProduct: Product = {}
   currentIndex = -1
   title = ''
+
   publishedProducts?: Product[] = []
+
+  weddingProducts?: Product[] = []
+
 
   ngOnInit(): void {
     this.retrieveProducts()
-
     this.userService.getPublicContent().subscribe({
       next: data => {
         this.content = data;
@@ -42,7 +45,19 @@ export class HomeComponent implements OnInit {
         }
       }
     });
+    this.getWedProducts()
+  }
 
+  getWedProducts(): void{
+    this.productService.getWeddingProducts()
+    .subscribe({
+      next: (data) =>{
+        this.weddingProducts = data
+        console.log("uhfviuhaofvjo9ajb09e    ",this.weddingProducts);
+        
+      },
+      error: (e) => console.error(e)
+    })
   }
 
   retrieveProducts(): void {
@@ -55,6 +70,8 @@ export class HomeComponent implements OnInit {
               this.publishedProducts?.push(val)
             }
           })
+          console.log(this.products[0].title,"usviugsiugfisueghiuebfiuhefiuoebfiugiuh");
+          
         },
         error: (e) => console.error(e)
       })

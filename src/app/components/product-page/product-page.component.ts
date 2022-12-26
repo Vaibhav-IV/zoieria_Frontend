@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input,ViewChild } from '@angular/core';
 import { Router, Route, ActivatedRoute } from '@angular/router';
 
 import { Product } from 'src/app/models/Product';
@@ -8,6 +8,9 @@ import { Cart } from 'src/app/models/Cart';
 import { CartItem } from 'src/app/models/cart-item';
 import { ShopService } from 'src/app/services/shop.service';
 import { StorageService } from 'src/app/services/storage.service';
+
+import { NgbCarousel } from '@ng-bootstrap/ng-bootstrap';
+
 
 const imgSRC = "./../../../../assets/img"
 
@@ -104,10 +107,10 @@ export class ProductPageComponent implements OnInit {
   //for displaying images
 
   imageSrc = '../../../assets/img/modernJwel.jpeg';
-  imageButtons = [
+  imageButtons = [ { src: '../../../assets/img/necklase2.jpg' },
     { src: '../../../assets/img/necklase2.jpg' },
     { src: '../../../assets/img/necklase3.jpeg' },
-    { src: '../../../assets/img/rings.jpg' }] //{ src: `${imgSRC}/${this.productImages[0].name}` }
+    { src: '../../../assets/img/rings.jpg' }] 
 
   onClick(imageNameObject: any) {
     this.imageSrc = imageNameObject.src;
@@ -139,5 +142,27 @@ export class ProductPageComponent implements OnInit {
         error: (e) => console.error(e)
       })
   }
+
+
+      //for carousel
+      isPrevious: boolean = false;
+      isNext: boolean = false;
+    
+      @ViewChild('carousel', { static: true }) carousel!: NgbCarousel;
+  
+      previousStep()
+      {
+          this.isPrevious = true;
+          this.carousel.prev();
+      }
+    
+      nextStep()
+      {
+          this.isNext = true;
+          this.carousel.next();
+    
+      }
+  
+      //end
 
 }

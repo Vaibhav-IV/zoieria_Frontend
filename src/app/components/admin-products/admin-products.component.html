@@ -6,9 +6,18 @@
     <mat-icon style="margin-bottom: 4px;">note_add</mat-icon> Refresh list
 </button>
 
-<button mat-button routerLink="analysis" class="mr-3" style="background: rgb(237, 117, 117); float: right;">
-    <mat-icon style="margin-bottom: 4px;">note_add</mat-icon> Analysis
+<button mat-button routerLink="analysis" class="mr-3" style="background: rgb(117, 237, 197); float: right;">
+    <mat-icon style="margin-bottom: 4px;">assessment</mat-icon> Analysis
 </button>
+
+
+<a href="https://analytics.google.com/analytics/web/#/p346857968/reports/reportinghub">
+    <button mat-button href="https://analytics.google.com/analytics/web/#/p346857968/reports/reportinghub" class="mr-3" style="background: rgb(237, 213, 213); float: right;">
+    <mat-icon style="margin-bottom: 4px;">assessment</mat-icon> Google Analysis
+</button>
+</a>
+
+
 
 
 <div class="list row w-100 main-content">
@@ -17,61 +26,75 @@
             <input type="text" class="form-control" placeholder="Search By title" [(ngModel)]="title">
 
             <div class="input-group-append">
-                <button class="text ml-3" mat-button style="background: rgb(141, 237, 117)" (click)="searchTitle()">
-                    Search
-                </button>
+
                 <button class="text ml-3" mat-button style="background: rgb(141, 237, 117)" (click)="searchByTitle()">
-                    Title
+                    Search
                 </button>
             </div>
         </div>
     </div>
 
+
     <div class="col-md-7">
-  <!-- *ngIf="!searchedProduct" -->
+        <!-- *ngIf="!searchedProduct" -->
         <table *ngIf="!searchedProduct" class="table table-bordered table-hover product-table table-responsive-md">
             <caption>List of Product</caption>
-            <thead  class="thead-light" >
+            <thead class="thead-light">
                 <tr>
                     <th scope="col">#</th>
                     <th scope="col">Title</th>
                     <th scope="col">Description</th>
                     <th scope="col">Cost</th>
+                    <th scope="col">MRP</th>
                     <th scope="col">Active</th>
+                    <th scope="col">Color</th>
                 </tr>
             </thead>
             <tbody *ngFor="let product of products; let i = index">
                 <tr>
                     <th [class.active]='i == currentIndex' (click)="setActiveProduct(product,i)">{{product.id}}</th>
                     <td [class.active]='i == currentIndex' (click)="setActiveProduct(product,i)">{{product.title}}</td>
-                    <td [class.active]='i == currentIndex' (click)="setActiveProduct(product,i)">{{product.description}}</td>
+                    <td [class.active]='i == currentIndex' (click)="setActiveProduct(product,i)">{{product.description}}
+                    </td>
+
                     <td [class.active]='i == currentIndex' (click)="setActiveProduct(product,i)">{{product.cost}}</td>
-                    <td [class.active]='i == currentIndex' (click)="setActiveProduct(product,i)">{{product.published}}</td>
+                    <td [class.active]='i == currentIndex' (click)="setActiveProduct(product,i)">{{product.mrp}}</td>
+
+                    <td [class.active]='i == currentIndex' (click)="setActiveProduct(product,i)">{{product.published}}
+                    </td>
+                    <td [class.active]='i == currentIndex' (click)="setActiveProduct(product,i)">{{product.color}}</td>
+
                 </tr>
             </tbody>
-        </table>   
+        </table>
 
-      
+
 
 
         <table *ngIf="!searchedProduct" class="table table-bordered table-hover product-table table-responsive-md">
             <caption>List of Product</caption>
-            <thead  class="thead-light" >
+            <thead class="thead-light">
                 <tr>
                     <th scope="col">#</th>
                     <th scope="col">Title</th>
                     <th scope="col">Description</th>
                     <th scope="col">Cost</th>
+                    <th scope="col">MRP</th>
                     <th scope="col">Active</th>
+                    <th scope="col">Color</th>
                 </tr>
             </thead>
             <tbody *ngFor="let product of searchedProducts; let i = index">
                 <tr>
                     <th [class.active]='i == currentIndex' (click)="setActiveProduct(product,i)">{{product.id}}</th>
                     <td [class.active]='i == currentIndex' (click)="setActiveProduct(product,i)">{{product.title}}</td>
-                    <td [class.active]='i == currentIndex' (click)="setActiveProduct(product,i)">{{product.description}}</td>
+                    <td [class.active]='i == currentIndex' (click)="setActiveProduct(product,i)">{{product.description}}
+                    </td>
                     <td [class.active]='i == currentIndex' (click)="setActiveProduct(product,i)">{{product.cost}}</td>
-                    <td [class.active]='i == currentIndex' (click)="setActiveProduct(product,i)">{{product.published}}</td>
+                    <td [class.active]='i == currentIndex' (click)="setActiveProduct(product,i)">{{product.mrp}}</td>
+                    <td [class.active]='i == currentIndex' (click)="setActiveProduct(product,i)">{{product.published}}
+                    </td>
+                    <td [class.active]='i == currentIndex' (click)="setActiveProduct(product,i)">{{product.color}}</td>
                 </tr>
             </tbody>
         </table>
@@ -79,7 +102,7 @@
 
         <table class="table table-bordered table-hover product-table table-responsive-md">
             <caption>List of Categories</caption>
-            <thead  class="thead-light" >
+            <thead class="thead-light">
                 <tr>
                     <th scope="col">#</th>
                     <th scope="col">Title</th>
@@ -88,18 +111,15 @@
             </thead>
             <tbody *ngFor="let cat of category; let i = index">
                 <tr>
-                    <th >{{cat.id}}</th>
-                    <td >{{cat.title}}</td>
-                    <td >{{cat.published}}</td>
+                    <th>{{cat.id}}</th>
+                    <td>{{cat.title}}</td>
+                    <td>{{cat.published}}</td>
                 </tr>
             </tbody>
         </table>
 
 
 
-        <button mat-button style="background: rgb(237, 117, 117)" class="text m-3" (click)="openDeleteDialog()">
-            remove all
-        </button>
     </div>
 
 
@@ -115,14 +135,15 @@
                 <p> cost: {{searchedProduct.cost}}</p>
             </mat-card-content>
             <mat-card-actions>
-                <a style="color: black;" routerLink="/{{ searchedProduct.id }}"><button mat-button style="background: rgb(141, 237, 117)" class="badge badge-warning m-2 mr-2">
+                <a style="color: black;" routerLink="/{{ searchedProduct.id }}"><button mat-button
+                        style="background: rgb(141, 237, 117)" class="badge badge-warning m-2 mr-2">
                         edit
                     </button> </a>
                 <!-- <button mat-button style="background: rgb(237, 117, 117)" class="badge badge-danger m-2 mr-2" (click)="deleteProduct()">
                     Delete
                 </button> -->
-    
-    
+
+
             </mat-card-actions>
         </mat-card>
 

@@ -26,10 +26,22 @@ export class AddProductDialogComponent implements OnInit {
     title: '',
     description: '',
     cost: 10,
+    mrp: 10,
     published: false,
-    categoryId: 1
+    color: '',
+    size: '',
+    material: '',
+    categoryId: 1,
+    imageTitle: ''
   };
+  selectedFile!: File;
   submitted = false
+
+  onFileChange(event:any) {
+    this.selectedFile = event.target.files[0];
+    console.log(this.selectedFile.name,"kgiuhdsiu");
+    
+  }
 
   ngOnInit(): void {
     this.retrieveCategory()
@@ -40,8 +52,13 @@ export class AddProductDialogComponent implements OnInit {
       title: this.product.title,
       description: this.product.description,
       cost: this.product.cost,
+      mrp: this.product.mrp,
       published: this.product.published,
       categoryId: this.product.categoryId,
+      color: this.product.color,
+      size:this.product.size,
+      material:this.product.material,
+      imageTitle:this.selectedFile.name
     }
 
     this.productService.create(data)
@@ -59,7 +76,7 @@ export class AddProductDialogComponent implements OnInit {
     this.product = {
       title: '',
       description: '',
-      cost: 10,
+      cost: 999,
       published: false,
       categoryId: undefined
     };

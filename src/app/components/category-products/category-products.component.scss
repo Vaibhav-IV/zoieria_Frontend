@@ -48,3 +48,61 @@
 .card-wrapper:hover .cart-btn {
     display: block;
 }
+
+
+
+
+//carousel start
+
+ngb-carousel {
+    width: 100%;
+    margin: auto;
+    //height: 50px;  //changes the ht of symbols
+}
+
+ngb-carousel img {
+    width: 100%;
+    height: 570px !important;
+    border-radius: 10px;
+    outline: none;
+    overflow: hidden;
+}
+
+.carousel-item {
+    display: flex !important;
+    opacity: 0;
+    visibility: hidden;
+    z-index: -1;
+
+}
+
+.carousel-caption {
+    color: #96E072;
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@media(max-width:540px) {
+    #carouselContainer {
+        display: none !important;
+    }
+
+    #carouselButtoms{
+        display: none !important;
+    }
+}
+
+mat-icon{
+    color: #96E072 !important;
+    font-size: 40px !important;
+}
+
+.justify-contet-centr{
+    position: absolute;
+    top: 642px;
+    right: 30px;
+}
+
+//carousel end

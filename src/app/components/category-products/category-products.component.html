@@ -1,3 +1,38 @@
+<div class="home-carousel">
+  <ngb-carousel #carousel id="carouselContainer" [showNavigationArrows]="false" [showNavigationIndicators]="false">
+
+    <ng-template ngbSlide id="one">
+      <div class="picsum-image-wrapper">
+        <img src="../../../assets/img/banner3.png" alt="just 1st image">
+      </div>
+      <div class="carousel-caption">
+      </div>
+    </ng-template>
+
+    <ng-template ngbSlide id="five">
+      <div class="picsum-image-wrapper">
+        <img src="../../../assets/img/banner5.png" alt="just 4th image">
+      </div>
+      <div class="carousel-caption">
+      </div>
+    </ng-template>
+    
+
+
+  </ngb-carousel>
+</div>
+
+
+<div class="justify-contet-centr" id="carouselButtoms">
+  <button mat-icon-button type="button" (click)="previousStep()">
+    <mat-icon>arrow_back_ios</mat-icon>
+  </button>
+  <button mat-icon-button type="button" (click)="nextStep()">
+    <mat-icon>arrow_forward_ios</mat-icon>
+  </button>
+</div>
+
+
 <div class="main-content">
     <!-- doing it on row -->
     <div class="row">

@@ -1,3 +1,6 @@
+
+<div class="main-content">
+
 <div *ngIf="viewMode; else editable" class="col-md-6 col-sm-12">
     <mat-card *ngIf="currentProduct.id" class="product-card mat-elevation-z4">
         <mat-card-title>{{currentProduct.title}}</mat-card-title>
@@ -41,6 +44,36 @@
             </div>
 
             <div class="form-group col-md-4">
+                <label for="description">Cost</label>
+                <input type="number" class="form-control" id="cost" [(ngModel)]="currentProduct.cost"
+                    name="description" />
+            </div>
+
+            <div class="form-group col-md-4">
+                <label for="description">MRP</label>
+                <input type="number" class="form-control" id="mrp" [(ngModel)]="currentProduct.mrp"
+                    name="description" />
+            </div>
+
+            <div class="form-group col-md-4">
+                <label for="description">Color</label>
+                <input type="text" class="form-control" id="color" [(ngModel)]="currentProduct.color"
+                    name="description" />
+            </div>
+
+            <div class="form-group col-md-4">
+                <label for="description">size</label>
+                <input type="text" class="form-control" id="size" [(ngModel)]="currentProduct.size"
+                    name="description" />
+            </div>
+
+            <div class="form-group col-md-4">
+                <label for="description">Material</label>
+                <input type="text" class="form-control" id="material" [(ngModel)]="currentProduct.material"
+                    name="description" />
+            </div>
+
+            <div class="form-group col-md-4">
                 <label for="description" class="mr-3">Activity</label>
                 <mat-slide-toggle id="published" name="published" [(ngModel)]="currentProduct.published"></mat-slide-toggle>
             </div>
@@ -59,3 +92,5 @@
         <p>Cannot access this Product...</p>
     </div>
 </ng-template>
+</div>
+

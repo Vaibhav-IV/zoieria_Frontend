@@ -1,5 +1,56 @@
 <div class="main-content">
   
+
+  <div class="home-carousel">
+    <ngb-carousel #carousel id="carouselContainer" [showNavigationArrows]="false" [showNavigationIndicators]="false">
+  
+      <ng-template ngbSlide id="one">
+        <div class="picsum-image-wrapper">
+          <img src="../../../assets/img/banner3.png" alt="just 1st image">
+        </div>
+        <div class="carousel-caption">
+        </div>
+      </ng-template>
+  
+      <ng-template ngbSlide id="two">
+        <div class="picsum-image-wrapper">
+          <img src="../../../assets/img/banner2.jpg" alt="just 2nd image">
+        </div>
+        <div class="carousel-caption">
+        </div>
+      </ng-template>
+  
+      <ng-template ngbSlide id="three">
+        <div class="picsum-image-wrapper">
+          <img src="../../../assets/img/banner.jpg" alt="just 3rd image">
+        </div>
+        <div class="carousel-caption">
+        </div>
+      </ng-template>
+  
+      <ng-template ngbSlide id="four">
+        <div class="picsum-image-wrapper">
+          <img src="../../../assets/img/banner5.png" alt="just 4th image">
+        </div>
+        <div class="carousel-caption">
+        </div>
+      </ng-template>
+      
+  
+  
+    </ngb-carousel>
+  </div>
+  
+  
+  <div class="justify-contet-centr" id="carouselButtoms">
+    <button mat-icon-button type="button" (click)="previousStep()">
+      <mat-icon>arrow_back_ios</mat-icon>
+    </button>
+    <button mat-icon-button type="button" (click)="nextStep()">
+      <mat-icon>arrow_forward_ios</mat-icon>
+    </button>
+  </div>
+
   <h1 align="center" *ngIf="this.searchedProducts.length==0" class="ex-text">No Searched result for {{this.searchedTitle}} </h1>
 
   <h1 align="center" *ngIf="this.searchedProducts.length >=1" class="ex-text">Searched result for {{this.searchedTitle}} </h1>

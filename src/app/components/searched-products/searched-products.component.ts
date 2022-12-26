@@ -1,9 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
 import { Image } from 'src/app/models/image';
 import { Product } from 'src/app/models/Product';
 import { ProductService } from 'src/app/services/product.service';
+
+import { NgbCarousel, NgbSlideEvent, NgbSlideEventSource } from '@ng-bootstrap/ng-bootstrap';
+
 
 @Component({
   selector: 'app-searched-products',
@@ -70,6 +73,25 @@ export class SearchedProductsComponent implements OnInit {
           console.log(this.imageSrc);
         }
       })
+  }
+
+
+  
+  isPrevious: boolean = false;
+  isNext: boolean = false;
+
+	@ViewChild('carousel', { static: true }) carousel!: NgbCarousel;
+  previousStep()
+  {
+      this.isPrevious = true;
+      this.carousel.prev();
+  }
+
+  nextStep()
+  {
+      this.isNext = true;
+      this.carousel.next();
+
   }
 
 }

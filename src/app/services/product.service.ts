@@ -14,6 +14,8 @@ const baseSearchUrl = "http://localhost:3000/admin/products/search"
 const imgURL = "http://localhost:3000/imageProduct"
 const allImgURL = "http://localhost:3000/images/all"
 
+const wedURL = "http://localhost:3000/admin/products/cat/wedding"
+
 @Injectable({
   providedIn: 'root'
 })
@@ -93,6 +95,10 @@ export class ProductService {
       catchError(
         this.errorHandlerService.handleError<Product[]>("getBycat error in services", [])
       ));
+  }
+
+  getWeddingProducts():Observable<any>{
+    return this.http.get<Product[]>(wedURL)
   }
 
   findById(id: any): Observable<Product[]> {

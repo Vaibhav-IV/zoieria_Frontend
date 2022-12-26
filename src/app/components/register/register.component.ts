@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { StorageService } from 'src/app/services/storage.service';
 import { AuthService } from '../../services/auth.service';
+
 
 @Component({
   selector: 'app-register',
@@ -21,9 +24,14 @@ export class RegisterComponent implements OnInit {
   isSignUpFailed = false;
   errorMessage = '';
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService,
+    private storageService: StorageService,
+    private router: Router) { }
 
   ngOnInit(): void {
+    if (this.storageService.isLoggedIn()) {
+      this.router.navigate(['/']);
+    }
   }
 
   onSubmit(): void {

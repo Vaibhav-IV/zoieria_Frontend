@@ -13,7 +13,7 @@
 
     <div class="d-none d-sm-block" *ngFor="let cat of category;let i =index">
         <ul class="navigation-items d-flex">
-            <li>
+            <li *ngIf="cat.published">
                 <a [class.active]='i == currentIndex' routerLink="/product/category/{{cat.id}}"
                     (click)="setActiveCategory(cat,i)">{{cat.title}}</a>
             </li>
@@ -53,10 +53,15 @@
     </ul>
 
 
-    <div class="menu-icons" *ngIf="isLoggedIn">
+    <div class="menu-icons" *ngIf="isLoggedIn && isUs">
         <mat-icon class="home-icons" (click)="logout()">exit_to_app</mat-icon>
-        <mat-icon class="home-icons">favorite_border</mat-icon>
         <mat-icon class="home-icons" matBadge="2" routerLink="user/cart" >shopping_cart</mat-icon>
+        
     </div>
 
+
+    <div class="menu-icons" *ngIf="isAd && isLoggedIn">
+        <mat-icon class="home-icons" (click)="logout()">exit_to_app</mat-icon>
+        <mat-icon *ngIf="isAd" class="home-icons" routerLink="admin/products" >desktop_windows</mat-icon>
+    </div>
 </mat-toolbar>

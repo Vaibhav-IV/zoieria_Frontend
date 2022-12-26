@@ -35,3 +35,11 @@ mat-card{
 :host ::ng-deep .mat-slide-toggle.mat-checked .mat-slide-toggle-ripple .mat-ripple-element {
     background-color: rgba(4, 135, 250, 0.2);
 }
+
+
+.main-content{
+    //width: 100%;
+    margin: auto;
+    //background: transparent;
+    margin: 20px;
+}
